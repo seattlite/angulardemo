@@ -1,0 +1,13 @@
+<div>
+    <div ng-controller="DataController">
+        <input ng-model="ff"></input>
+        <p ng-repeat="customer in customers | filter:ff"> {{ customer.name | uppercase}} {{customer.age}}</p>
+    </div>
+    <form ng-submit="submit()" ng-controller="FormController">
+        <input ng-model="formData.name"></input>
+        <input ng-model="formData.age"></input>
+        <input type="submit" value="OK"> </input>
+        <label ng-value="result.name"> {{ result.name }} </label> 
+        <!--{{ result.age }} </p>-->
+    </form>
+</div>
