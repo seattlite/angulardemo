@@ -24,6 +24,17 @@ function FormController($scope)
         $scope.result = this.formData;
     }
 }
+
+function ProfileController($scope, AccessToken){
+    $scope.$on('oauth:login', function(event, token) {
+        console.log('yo')
+        $scope.accessToken = token.access_token;
+    });
+    $scope.profile =   AccessToken.get(); 
+    console.log($scope.profile);
+
+}
+
 var allControllers = angular.module('allControllers', []);
 
 allControllers.controller('SimpleController', SimpleController);

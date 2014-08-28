@@ -3,10 +3,22 @@
     <head>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/ngstorage/ngStorage.js"></script>
+        <script src="bower_components/oauth-ng/dist/oauth-ng.js"></script>
         <script src="js/controller.js"></script>
         <script src="js/app.js"></script>
     </head>
     <body>
+        <oauth
+        template='partial/custom.html'
+        site="https://login.live.com/oauth20_authorize.srf"
+        client-id="0000000040128532"
+        redirect-uri="http://examplex12.com:8000/index.html#/3"
+        profile-uri=""
+        scope="wl.basic+wl.emails">
+        </oauth>
         <div ng-view></div>
     </body>
 </html>
+<!--redirect-uri="http://examplex12.com:8000/complete/live/"-->
+<!--redirect-uri="https://login.live.com/oauth20_desktop.srf"-->
